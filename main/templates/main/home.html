@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %} 
+{% load static %} 
+{% block content %}
+
+<section class="container text-center">
+  {% if user.is_authenticated %}
+  <h3>Welcome {{username}} </h3>
+  {% else %}
+  <h3>Features Offered<h3>
+  {% endif %}
+  <hr> <br>
+  <div class="row">
+    <div class="col-md-3">
+      <a href="{% url 'add_emp' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/notes.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Add Employee
+            </h5>
+            
+          </div>
+        </div>
+      </a>
+    </div>
+
+     <div class="col-md-3">
+      <a href="{% url 'view_emp' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/homework.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              List of employees
+            </h5>
+           
+          </div>
+        </div>
+      </a>
+    </div>
+
+    
+
+     <div class="col-md-3">
+      <a href="{% url 'edit-emp' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/wiki.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Edit employees
+            </h5>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+    <div class="col-md-3">
+      <a href="{% url 'search-emp' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/conversion.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Search employee
+            </h5>
+            
+          </div>
+        </div>
+      </a>
+    </div>
+  </div> 
+
+
+</section>
+{% endblock content %}
